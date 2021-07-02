@@ -7,8 +7,8 @@ public class Const {
 	public static final String ACC_HEADER = "My Account"	;
 	public static final List<String> ACCPAGE_HEADERSLIST = Arrays.asList("My Account", "My Orders", "My Affiliate Account", "Newsletter");
 	public static final String PRO_HEADER = "MacBook Pro";
-	public static String LOGIN_TITLE="Account Login";
-	public static String LOGIN_URL="Account Login";
+	public static String LOGIN_TITLE="My Account";
+	public static String LOGIN_URL="https://demo.opencart.com/index.php?route=account/account";
 	public static String ACC_TITLE="My Account";
 	//test data
 	public static final String TESTDATA_EXCEL_PATH = "./src/test/resources/TestData/JuneTestData.xlsx";

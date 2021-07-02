@@ -11,6 +11,7 @@ public class LoginTest extends BaseTest {
 	@Test
 	public void loginPageTilteTest() {
 		String act = lp.getLoginPageTilte();
+		System.out.println("loginPageTilte "+act);
 		String exp = Const.LOGIN_TITLE;
 		Assert.assertEquals(act, exp, ErrorUtil.LOGIN_PAGE_TITLE_ERROR);
 	}
@@ -18,6 +19,7 @@ public class LoginTest extends BaseTest {
 	@Test
 	public void loginPageUrlTest() {
 		String act = lp.getLoginPageUrl();
+		System.out.println("loginPageUrl "+act);
 		String exp = Const.LOGIN_URL;
 		Assert.assertEquals(act, exp, ErrorUtil.LOGIN_PAGE_URL_ERROR);
 	}
