@@ -67,7 +67,7 @@ public class DriverFactory {
 			try {
 				switch (env) {
 				case "qa":
-					fp = new FileInputStream("/src/test/resources/config/config_qa.properties");
+					fp = new FileInputStream("./src/test/resources/config/config_qa.properties");
 					break;
 				case "stage":
 					fp = new FileInputStream("./src/test/resources/config/stage.config.properties");
