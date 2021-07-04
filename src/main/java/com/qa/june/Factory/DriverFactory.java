@@ -49,20 +49,49 @@ public class DriverFactory {
 	}
 
 	public Properties init_prop() {
-		prop=new Properties();
-		FileInputStream fp;
+		prop = new Properties();
+		FileInputStream fp = null;
+		String env = System.getProperty("env");
+		System.out.println("Runing on env " + env);
+		if (env == null) {
+			System.out.println("Runing on env Production");
+			try {
+				fp = new FileInputStream("./src/test/resources/config/config.properties");
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		} else {
+			System.out.println("Running on Environment : --> " + env);
+			try {
+				switch (env) {
+				case "qa":
+					fp = new FileInputStream("/src/test/resources/config/config_qa.properties");
+					break;
+				case "stage":
+					fp = new FileInputStream("./src/test/resources/config/stage.config.properties");
+					break;
+				case "dev":
+					fp = new FileInputStream("./src/test/resources/config/config_dev.properties");
+					break;
+				default:
+					break;
+				}
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+
+		}
 		try {
-			fp = new FileInputStream("./src/test/resources/config/config.properties");
 			prop.load(fp);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+			System.out.println("FileNotFoundException");
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return prop;
-		
 		
 	}
 
