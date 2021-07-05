@@ -75,6 +75,9 @@ public class DriverFactory {
 				case "dev":
 					fp = new FileInputStream("./src/test/resources/config/config_dev.properties");
 					break;
+				case "prod":
+					fp = new FileInputStream("./src/test/resources/config/config.properties");
+					break;
 				default:
 					break;
 				}
